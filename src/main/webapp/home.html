@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Telco</title>
+    <link rel="stylesheet" href="style/graphics.css">
 </head>
 <body>
 
   <!-- Home Page-->
   <div>
 
-    <div>
-      <!-- Login/Logout Bar -->
+    <!-- Login/Logout Bar -->
+    <div class="upperBar">
+      <div id="userDetails"><!-- User Data --></div>
+      <div>
+        <button class="loginButton" id="loginButton">Login</button>
+        <button class="logoutButton" id="logoutButton">Logout</button>
+      </div>
     </div>
 
     <h1>Welcome to Telco!</h1>
@@ -28,57 +34,86 @@
   </div>
 
   <!-- Login/Registration Modal Page -->
-  <div>
+  <div class="landingPage" id="landingPage">
 
     <!-- Login -->
-    <div>
+    <div class="login" id="login">
       <h1>Login</h1>
       <form>
         <label>Username</label><br>
-        <input type="text"><br>
+        <label>
+          <input type="text">
+        </label><br>
         <label>Password</label><br>
-        <input type="password"><br>
+        <label>
+          <input type="password">
+        </label><br>
         <input type="submit" value="Sign In">
       </form>
-      <p>You are not subscribed in our website?
-      <br>
-      Sign up here!</p>
+      <p>You are not subscribed in our website?</p>
+      <a id="signUpAnchor">Sign up here!</a>
     </div>
 
     <!-- Registration -->
-    <div>
+    <div class="signup" id="signup">
       <h1>Sign Up</h1>
       <form>
         <label>Username</label><br>
-        <input type="text"><br>
+        <label>
+          <input type="text">
+        </label><br>
         <label>Email</label><br>
-        <input type="email"><br>
+        <label>
+          <input type="email">
+        </label><br>
         <label>Password</label><br>
-        <input type="password"><br>
+        <label>
+          <input type="password">
+        </label><br>
         <label>Confirm Password</label><br>
-        <input type="password"><br>
+        <label>
+          <input type="password">
+        </label><br>
         <input type="submit" value="Sign In">
       </form>
     </div>
+
   </div>
 
   <!-- Buy Service Page -->
-  <div>
+  <div >
     <h1>Buy Service</h1>
     <form>
       <label>Choose your package:</label>
-      <input type="radio">Option1<br>
+      <label>
+        <input type="radio">
+      </label>Option1<br>
       <label>Validity Period</label><br>
       <!-- List box input -->
       <label>Do you want some of our products?</label><br>
-      <input type="checkbox">Option1<br>
+      <label>
+        <input type="checkbox">
+      </label>Option1<br>
       <label>Start Subscription Date</label><br>
-      <input type="date"><br>
+      <label>
+        <input type="date">
+      </label><br>
       <input type="submit" value="Confirm">
     </form>
   </div>
 
   <!-- Confirmation Page -->
+  <div class="confirmation_page">
+    <div class="order">
+      <h1>Your Order</h1>
+      <!-- Details Order -->
+      <p>This is your service package</p>
+      <p>Validity Period chosen</p>
+      <p>These are the optional products you've chosen</p>
+      <p>Value per months</p>
+      <input type="submit" value="Buy!">
+    </div>
+  </div>
 
 </body>
 </html>
