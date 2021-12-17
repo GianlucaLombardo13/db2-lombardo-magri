@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Telco</title>
+    <link rel="stylesheet" href="style/graphics.css">
+</head>
+<body>
+
+  <!-- Home Page-->
+  <div>
+
+    <!-- Login/Logout Bar -->
+    <div class="upperBar">
+      <div id="userDetails"><!-- User Data --></div>
+      <div>
+        <button class="loginButton" id="loginButton">Login</button>
+        <button class="logoutButton" id="logoutButton">Logout</button>
+      </div>
+    </div>
+
+    <h1>Welcome to Telco!</h1>
+    <h2>
+      These are our Service Package.
+    <br>
+      Take a look and choose the one that suits you best!
+    </h2>
+
+    <table>
+      <thead></thead>
+      <tbody><!-- Service Package --></tbody>
+    </table>
+
+  </div>
+
+  <!-- Login/Registration Modal Page -->
+  <div class="landingPage" id="landingPage">
+
+    <!-- Login -->
+    <div class="login" id="login">
+      <h1>Login</h1>
+      <form>
+        <label>Username</label><br>
+        <label>
+          <input type="text">
+        </label><br>
+        <label>Password</label><br>
+        <label>
+          <input type="password">
+        </label><br>
+        <input type="submit" value="Sign In">
+      </form>
+      <p>You are not subscribed in our website?</p>
+      <a id="signUpAnchor">Sign up here!</a>
+    </div>
+
+    <!-- Registration -->
+    <div class="signup" id="signup">
+      <h1>Sign Up</h1>
+      <form>
+        <label>Username</label><br>
+        <label>
+          <input type="text">
+        </label><br>
+        <label>Email</label><br>
+        <label>
+          <input type="email">
+        </label><br>
+        <label>Password</label><br>
+        <label>
+          <input type="password">
+        </label><br>
+        <label>Confirm Password</label><br>
+        <label>
+          <input type="password">
+        </label><br>
+        <input type="submit" value="Sign In">
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Buy Service Page -->
+  <div >
+    <h1>Buy Service</h1>
+    <form>
+      <label>Choose your package:</label>
+      <label>
+        <input type="radio">
+      </label>Option1<br>
+      <label>Validity Period</label><br>
+      <!-- List box input -->
+      <label>Do you want some of our products?</label><br>
+      <label>
+        <input type="checkbox">
+      </label>Option1<br>
+      <label>Start Subscription Date</label><br>
+      <label>
+        <input type="date">
+      </label><br>
+      <input type="submit" value="Confirm">
+    </form>
+  </div>
+
+  <!-- Confirmation Page -->
+  <div class="confirmation_page">
+    <div class="order">
+      <h1>Your Order</h1>
+      <!-- Details Order -->
+      <p>This is your service package</p>
+      <p>Validity Period chosen</p>
+      <p>These are the optional products you've chosen</p>
+      <p>Value per months</p>
+      <input type="submit" value="Buy!">
+    </div>
+  </div>
+
+</body>
+</html>
