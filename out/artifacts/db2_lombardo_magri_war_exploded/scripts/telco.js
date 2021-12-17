@@ -4,8 +4,10 @@
     let pageOrchestrator=new PageOrchestrator();
     
     window.addEventListener('load',()=>{
+        console.log("adding event listener");
         pageOrchestrator.start();
         pageOrchestrator.refresh();
+
     },false)
     
     function UpperBar(userDetails,loginButton,logoutButton){
@@ -46,6 +48,7 @@
             this.landingPage.style.display="block";
             this.login.style.display="block";
             this.signup.style.display="none";
+            console.log("show login");
         }
 
         this.showSignUp=function (){
@@ -64,10 +67,16 @@
 
     function PageOrchestrator(){
         this.start=function (){
+            console.log("start");
             upperBar=new UpperBar(document.getElementById("userDetails"),document.getElementById("loginButton"),document.getElementById("logoutButton"));
             landingPage=new LandingPage(document.getElementById("landingPage"),document.getElementById("login"),document.getElementById("logout"));
             buyServicePage=new BuyServicePage();
             confirmationPage=new ConfirmationPage();
+
+            document.getElementById("loginButton").addEventListener('click',()=>{
+                landingPage.showLogin();
+            })
+            console.log("added event listener to button");
         }
 
         this.refresh=function (){
@@ -80,12 +89,11 @@
 
             landingPage.reset();
         }
+
     }
 
 
-    document.getElementById("loginButton").addEventListener('click',()=>{
-        landingPage.showLogin();
-    })
+
     document.getElementById("signUpAnchor").addEventListener('click',()=>{
         landingPage.showSignUp();
     })
@@ -93,4 +101,4 @@
     document.getElementById("logoutButton").addEventListener('click',()=>{
 
     })
-})
+})();
