@@ -1,6 +1,6 @@
 body{
     font-weight: normal;
-    font-family: "Sora", sans-serif;
+    font-family: "Inter", sans-serif;
     font-style: normal;
     color: #3F4964;
 
@@ -20,49 +20,55 @@ label{
 }
 
 input[type="submit"]{
-    font-style: normal;
     font-size: 14pt;
-    color: #F0F7F4;
+    font-weight: bold;
 
-    border: 2pt solid #6a7444;
-    background-color: #a1a86e;
+    color: #3F4964;
+
+    border: 2pt solid #3F4964;
+    background-color: #9BA5C0;
     border-radius: 10pt;
+    box-shadow:
+            0 2px 5px 0 rgba(0,0,0,0.16),
+            0 2px 10px 0 rgba(0,0,0,0.12);
 
     margin: 10px;
 
-    width: 100px;
-    height: 50px;
+    height: 40px;
 }
 
 input[type="submit"]:hover{
-    font-weight: bold;
-    transition-duration: 0.3s;
-    border: 4pt solid #3F4964;
-    background-color: #F4D35E;
-    color: #3F4964;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    border: 2pt solid #3F4964;
+    background-color: #3F4964;
+    color: #F2F4F7;
 }
 
 button.loginButton{
-    font-style: normal;
     font-size: 14pt;
-    color: #F0F7F4;
+    font-weight: bold;
+
+    color: #273F3F;
 
     border: 2pt solid #273F3F;
-    background-color: #4E7E7E;
+    background-color: #B4CFCF;
     border-radius: 10pt;
+    box-shadow:
+            0 2px 5px 0 rgba(0,0,0,0.16),
+            0 2px 10px 0 rgba(0,0,0,0.12);
 
     margin: 10px;
 
-    width: 100px;
-    height: 50px;
+    height:50px;
 
     float: right;
 }
 
 button.loginButton:hover{
-    transition-duration: 0.5s;
-    font-weight: bold;
-    border: 4pt solid #273F3F;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    border: 2pt solid #273F3F;
     background-color: #273F3F;
     color: #F0F7F4;
 }
@@ -110,12 +116,14 @@ div.upperBar{
     display: block;
 
     height: 70px;
-    background-color: rgba(63, 73, 100, 0.3);
+    background-color: rgba(39, 63, 63, 0.3);
+}
+
+div.confirmation_page{
+    display: none;
 }
 
 div.landingPage,div.confirmation_page{
-    display: none;
-
     position: fixed;
     z-index: 5;
 
@@ -129,15 +137,165 @@ div.landingPage,div.confirmation_page{
 
     overflow: auto;
 
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(63,73,100,0.75);
 }
 
 div.login,div.signup,div.order{
     border: 2pt solid #3F4964;
     border-radius: 10px;
 
-    margin: 15%;
-    padding:20px;
+    margin: 10%;
+    padding: 20px;
+
+    vertical-align: baseline;
 
     background-color: #F0F7F4;
 }
+
+input[type="text"],input[type="password"],input[type="email"],input[type="date"]{
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14px;
+    color: #273F3F;
+
+    border-radius: 10px;
+    border: 1px solid #273F3F;
+
+    width: 50%;
+    height: 40px;
+
+    padding: 0 15px;
+
+    box-shadow:
+            0 2px 5px 0 rgba(0,0,0,0.16),
+            0 2px 10px 0 rgba(0,0,0,0.12);
+
+
+    transition: width 0.5s ease-in-out;
+}
+
+input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus,input[type="date"] :focus{
+    width: 75%;
+    border: 3px solid #4E7E7E;
+}
+
+a.signup,a.login{
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+a.signup:hover,a.login:hover{
+    text-decoration: underline;
+    transition: 0.5s;
+    letter-spacing: 1px;
+}
+
+p.errormessage{
+    transition: visibility 0.5s ease-in-out;
+    visibility: visible;
+    font-size: 12px;
+    font-weight: bold;
+    color: #6A252E;
+}
+
+span.exit{
+    font-size: 40px;
+    float: left;
+    font-weight: bold;
+}
+
+span.exit:hover,:focus{
+    transition: 0.5s;
+    color: #9BA5C0;
+}
+
+input[type="submit"].signInButton,input[type="submit"].signUpButton{
+    width: 50%;
+    height: 40px;
+}
+
+div.changeModal{
+    border-top: 1px solid #B4CFCF;
+    padding: 10px 10px;
+}
+
+table.listServicePackage{
+    width: 100%;
+    height: 50px;
+
+    border-top: 1px solid #B4CFCF;
+    border-bottom: 1px solid #B4CFCF;
+}
+
+img.arrows{
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+}
+
+img.arrows:hover{
+    transition: 0.5s;
+    opacity: 1;
+}
+
+div.selectValidityPeriod select{
+    display: none;
+}
+
+.select-selected{
+    text-align: center;
+    width: 75%;
+    border-radius: 10px;
+    background-color: #3F4964;
+    color: #F2F4F7;
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(63,73,100,1);
+    cursor: pointer;
+}
+
+.select-selected:hover{
+    transition: 0.5s;
+    letter-spacing: 3px;
+}
+
+/*.select-selected::after{
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}*/
+
+/*.select-selected.select-arrow-active:after{
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}*/
+
+.select-items div{
+    color: #3F4964;
+    background-color: rgba(155,165,192,0.5);
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(63,73,100,1);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+ .select-items{
+    background-color: rgba(155,165,192,0.9);
+    width: 75%;
+ }
+
+ .select-hide{
+     display: none;
+ }
+
+ .select-items div:hover,.same-as-selected{
+     letter-spacing: 3px;
+     background-color: rgba(63,73,100,0.1);
+     color: #F2F4F7;
+ }
+

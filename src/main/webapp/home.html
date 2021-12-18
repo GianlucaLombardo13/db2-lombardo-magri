@@ -1,120 +1,189 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <title>Telco</title>
-    <link rel="stylesheet" href="style/graphics.css">
-  <script src="scripts/telco.js" charset="UTF-8" defer></script>
-</head>
-<body>
-
-  <!-- Home Page-->
-  <div>
+  <head>
+      <meta charset="UTF-8">
+      <title>Telco</title>
+      <link rel="stylesheet" href="style/graphics.css">
+    <script src="scripts/telco.js" charset="UTF-8" defer></script>
+    <script src="scripts/select-box.js" charset="UTF-8" defer></script>
+    <script src="scripts/utils.js" charset="UTF-8" defer></script>
+  </head>
+  <body>
 
     <!-- Login/Logout Bar -->
     <div class="upperBar">
-      <div id="userDetails"><!-- User Data --></div>
+    <div id="userDetails">
+      <p>username</p>
+    </div>
+    <div>
+      <button class="loginButton" id="loginButton">Login</button>
+      <button class="logoutButton" id="logoutButton">Logout</button>
+    </div>
+  </div>
+
+    <!-- Home Page-->
+    <div>
+
+
+
+      <h1>Welcome to Telco!</h1>
+      <h2>
+        These are our Service Package.
+      <br>
+        Take a look and choose the one that suits you best!
+      </h2>
+
       <div>
-        <button class="loginButton" id="loginButton">Login</button>
-        <button class="logoutButton" id="logoutButton">Logout</button>
+
+        <table class="listServicePackage">
+          <thead></thead>
+          <tbody>
+            <tr>
+              <td width="10%"><img class="arrows" src="images/Left%20Arrow.png"></td>
+              <td>
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </td>
+              <td width="10%"><img class="arrows" src="images/Right%20Arrow.png"></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+    <!-- Login/Registration Modal Page -->
+    <div class="landingPage" id="landingPage">
+
+      <!-- Login -->
+      <div class="login" id="login">
+
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td width="10%"><span class="exit">&times;</span></td>
+              <td><h1>Hello!</h1></td>
+              <td width="10%"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Sign into your account here.</p>
+
+        <form>
+
+          <label>Username</label><br>
+          <label><input type="text" placeholder="Username"></label>
+          <p class="errormessage" id="errorUsernameLogin">&times; Username not valid</p>
+
+          <label>Password</label><br>
+          <label><input type="password" placeholder="Password"></label>
+          <p class="errormessage" id="errorPasswordLogin">&times; Password incorrect</p>
+
+          <input class="signInButton" type="submit" value="Sign In">
+
+        </form>
+
+        <div class="changeModal">
+
+          <p>Don't have an account?</p>
+          <a id="signUpAnchor" class="signup">Sign up here!</a>
+
+        </div>
+
+      </div>
+
+      <!-- Registration -->
+      <div class="signup" id="signup">
+
+        <table width="100%">
+          <tbody>
+          <tr>
+            <td width="10%"><span class="exit">&times;</span></td>
+            <td><h1>Join Us</h1></td>
+            <td width="10%"></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <p>Sing up to place an order.</p>
+
+        <form>
+
+          <label>Username</label><br>
+          <label><input type="text" placeholder="Username"></label>
+          <p class="errormessage" id="errorUsernameSignUp">&times; Username already used</p>
+
+          <label>Email</label><br>
+          <label><input type="email" placeholder="Email"></label>
+          <p class="errormessage" id="errorEmailSignUp">&times; Email already used</p>
+
+          <label>Password</label><br>
+          <label><input type="password" placeholder="Password"></label><br><br>
+          <label>Confirm Password</label><br>
+          <label><input type="password" placeholder="Confirm Again"></label>
+          <p class="errormessage" id="errorPasswordSignUp">&times; Passwords don't match</p>
+
+          <input class="signUpButton" type="submit" value="Sign Up">
+
+        </form>
+
+        <div class="changeModal">
+
+          <p>Already have an account?</p>
+          <a id="loginAnchor" class="login">Sign in here!</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Buy Service Page -->
+    <div >
+      <h1>Buy Service</h1>
+
+      <form>
+        <label>Package selected:</label><br>
+        <!-- Package -->
+        <label>Validity Period:</label><br>
+        <div class="selectValidityPeriod">
+          <select>
+            <option>Select Validity Period:</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <label>Do you want some of our products?</label><br>
+        <label>
+          <input type="checkbox">
+        </label>Option1<br>
+        <label>Start Subscription Date</label><br>
+        <label>
+          <input type="date">
+        </label><br>
+        <input type="submit" value="Confirm">
+      </form>
+    </div>
+
+    <!-- Confirmation Page -->
+    <div class="confirmation_page">
+      <div class="order">
+        <h1>Your Order</h1>
+        <!-- Details Order -->
+        <p>This is your service package</p>
+        <p>Validity Period chosen</p>
+        <p>These are the optional products you've chosen</p>
+        <p>Value per months</p>
+        <input type="submit" value="Buy!">
       </div>
     </div>
 
-    <h1>Welcome to Telco!</h1>
-    <h2>
-      These are our Service Package.
-    <br>
-      Take a look and choose the one that suits you best!
-    </h2>
-
-    <table>
-      <thead></thead>
-      <tbody><!-- Service Package --></tbody>
-    </table>
-
-  </div>
-
-  <!-- Login/Registration Modal Page -->
-  <div class="landingPage" id="landingPage">
-
-    <!-- Login -->
-    <div class="login" id="login">
-      <h1>Login</h1>
-      <form>
-        <label>Username</label><br>
-        <label>
-          <input type="text">
-        </label><br>
-        <label>Password</label><br>
-        <label>
-          <input type="password">
-        </label><br>
-        <input type="submit" value="Sign In">
-      </form>
-      <p>You are not subscribed in our website?</p>
-      <a id="signUpAnchor">Sign up here!</a>
-    </div>
-
-    <!-- Registration -->
-    <div class="signup" id="signup">
-      <h1>Sign Up</h1>
-      <form>
-        <label>Username</label><br>
-        <label>
-          <input type="text">
-        </label><br>
-        <label>Email</label><br>
-        <label>
-          <input type="email">
-        </label><br>
-        <label>Password</label><br>
-        <label>
-          <input type="password">
-        </label><br>
-        <label>Confirm Password</label><br>
-        <label>
-          <input type="password">
-        </label><br>
-        <input type="submit" value="Sign In">
-      </form>
-    </div>
-
-  </div>
-
-  <!-- Buy Service Page -->
-  <div >
-    <h1>Buy Service</h1>
-    <form>
-      <label>Choose your package:</label>
-      <label>
-        <input type="radio">
-      </label>Option1<br>
-      <label>Validity Period</label><br>
-      <!-- List box input -->
-      <label>Do you want some of our products?</label><br>
-      <label>
-        <input type="checkbox">
-      </label>Option1<br>
-      <label>Start Subscription Date</label><br>
-      <label>
-        <input type="date">
-      </label><br>
-      <input type="submit" value="Confirm">
-    </form>
-  </div>
-
-  <!-- Confirmation Page -->
-  <div class="confirmation_page">
-    <div class="order">
-      <h1>Your Order</h1>
-      <!-- Details Order -->
-      <p>This is your service package</p>
-      <p>Validity Period chosen</p>
-      <p>These are the optional products you've chosen</p>
-      <p>Value per months</p>
-      <input type="submit" value="Buy!">
-    </div>
-  </div>
-
-</body>
+  </body>
 </html>
