@@ -1,27 +1,27 @@
-let x, i, j, l, ll, selElement, a, b, c;
+/*let x, i, j, l, ll, selElement, a, b, c;
 /* Look for any elements with the class "custom-select": */
-x = document.getElementsByClassName("selectValidityPeriod");
+/*x = document.getElementsByClassName("selectValidityPeriod");
 l = x.length;
 for (i = 0; i < l; i++) {
     selElement = x[i].getElementsByTagName("select")[0];
     ll = selElement.length;
     /* For each element, create a new DIV that will act as the selected item: */
-    a = document.createElement("div");
+/*    a = document.createElement("div");
     a.setAttribute("class", "select-selected");
     a.innerHTML = selElement.options[selElement.selectedIndex].innerHTML;
     x[i].appendChild(a);
     /* For each element, create a new DIV that will contain the option list: */
-    b = document.createElement("DIV");
+/*    b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
     for (j = 1; j < ll; j++) {
         /* For each option in the original select element,
         create a new DIV that will act as an option item: */
-        c = document.createElement("DIV");
+/*        c = document.createElement("DIV");
         c.innerHTML = selElement.options[j].innerHTML;
         c.addEventListener("click", function(e) {
             /* When an item is clicked, update the original select box,
             and the selected item: */
-            var y, i, k, s, h, sl, yl;
+/*            var y, i, k, s, h, sl, yl;
             s = this.parentNode.parentNode.getElementsByTagName("select")[0];
             sl = s.length;
             h = this.parentNode.previousSibling;
@@ -46,7 +46,7 @@ for (i = 0; i < l; i++) {
     a.addEventListener("click", function(e) {
         /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
-        e.stopPropagation();
+/*        e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
         this.classList.toggle("select-arrow-active");
@@ -56,7 +56,7 @@ for (i = 0; i < l; i++) {
 function closeAllSelect(element) {
     /* A function that will close all select boxes in the document,
     except the current select box: */
-    var x, y, i, xl, yl, arrNo = [];
+/*    var x, y, i, xl, yl, arrNo = [];
     x = document.getElementsByClassName("select-items");
     y = document.getElementsByClassName("select-selected");
     xl = x.length;
@@ -77,4 +77,4 @@ function closeAllSelect(element) {
 
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
-document.addEventListener("click", closeAllSelect);
+/*document.addEventListener("click", closeAllSelect);*/
