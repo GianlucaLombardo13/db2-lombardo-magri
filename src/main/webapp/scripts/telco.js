@@ -188,6 +188,26 @@
         }
     }
 
+    document.getElementById("signInButton").addEventListener('click',(e)=>{
+        const form = e.target.closest("form");
+        if(form.checkValidity()){
+            makeCall("POST",'checkLogin',form,function (req){
+                if(req.readyState===XMLHttpRequest.DONE){
+                    const message = req.responseText;
+                    if(req.status===200){ // SC_OK
+                        const customer = JSON.parse(message);
+                        sessionStorage.setItem('customer',JSON.stringify(customer));
+                        upperBar.update(customer);
+                    }else{
+                        // Other Errors
+                    }
+                }
+            });
+        }else{
+            form.reportValidity();
+        }
+    })
+
     document.getElementById("logoutButton").addEventListener('click',()=>{
 
     })

@@ -1,5 +1,6 @@
 package it.polimi.db2.controllers;
 
+import com.google.gson.Gson;
 import it.polimi.db2.connection.ConnectionManager;
 import it.polimi.db2.entities.Customer;
 
