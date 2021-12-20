@@ -4,10 +4,8 @@
     let pageOrchestrator=new PageOrchestrator();
     
     window.addEventListener('load',()=>{
-        console.log("adding event listener");
         pageOrchestrator.start();
         pageOrchestrator.refresh();
-
     },false)
     
     function UpperBar(userDetails,loginButton,logoutButton){
@@ -21,11 +19,11 @@
             this.logoutButton.style.display="none";
         }
 
-        this.update=function(user){
+        this.update=function(customer){
             let username;
             this.userDetails.innerHTML="";
             username=document.createElement("h3");
-            username.textContent=user.username;
+            username.textContent=customer.username;
             this.userDetails.appendChild(username);
             this.userDetails.style.display="block";
             this.logoutButton.style.display="block";
@@ -191,7 +189,7 @@
     document.getElementById("signInButton").addEventListener('click',(e)=>{
         const form = e.target.closest("form");
         if(form.checkValidity()){
-            makeCall("POST",'checkLogin',form,function (req){
+            makeCall("POST",'CheckLogin',form,function (req){
                 if(req.readyState===XMLHttpRequest.DONE){
                     const message = req.responseText;
                     if(req.status===200){ // SC_OK
